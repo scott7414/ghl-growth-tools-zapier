@@ -81,7 +81,7 @@ Use **24-hour time** (also known as "military time") to specify the hours.
 ## **Validation Rules**
 
 1. **Days of the Week**:  
-   Must be an array containing numbers between **0** and **6** only.
+   Must be an array containing a single number between **0** and **6** only.
    
 2. **Hours**:
    - `openHour` and `closeHour` must be between **0** and **23**.
