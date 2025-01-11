@@ -92,14 +92,14 @@ Use **24-hour time** (also known as "military time") to specify the hours.
    - `openMinute` and `closeMinute` must be between **0** and **59**.
    
 3. **JSON Structure**  
-   Ensure the input is valid JSON by wrapping your code inside an object with a key like `hours`. You can use [JSONLint](https://jsonlint.com/) to validate your JSON before inputting it into the app.
+   Ensure the input is valid JSON by wrapping your code inside an object with a key like `businessHours`. You can use [JSONLint](https://jsonlint.com/) to validate your JSON before inputting it into the app.
 
    **Note:** When pasting your code in Zapier, do **not** include the entire object. Only include the array of days and hours, as shown in the examples above.
 
-   **Example of a wrapped object for validation purposes:**  
+   **Example of a wrapped object for validation purposes in [JSONLint](https://jsonlint.com/):**  
    ```json
    {
-     "object": [
+     "businessHours": [
        {
          "daysOfTheWeek": [1],
          "hours": [
