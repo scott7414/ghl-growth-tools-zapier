@@ -227,7 +227,7 @@ Use **24-hour time** (also known as "military time") to specify the hours.
 
 ### **Case 3: Business Has Split Hours on Monday and Tuesday**
 
-In this case, the business operates with a **break in between shifts** (e.g., open in the morning, closed for lunch, then open again in the afternoon). The `hours` object allows for multiple time periods in a single day.
+In this case, the user operates with a **break in between shifts** (e.g., available in the morning, unavailable for lunch, then available again in the afternoon). The `hours` object allows for multiple time periods in a single day.
 
 ```json
 [
