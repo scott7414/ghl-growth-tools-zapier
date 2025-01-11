@@ -162,15 +162,26 @@ Use **24-hour time** (also known as "military time") to specify the hours.
 ```json
 [
   {
-    "daysOfTheWeek": [3],
     "hours": [
       {
-        "openHour": 10,
-        "closeHour": 14,
+        "openHour": 8,
+        "closeHour": 17,
         "openMinute": 0,
         "closeMinute": 0
       }
-    ]
+    ],
+    "daysOfTheWeek": [6]
+  },
+  {
+    "hours": [
+      {
+        "openHour": 8,
+        "closeHour": 17,
+        "openMinute": 0,
+        "closeMinute": 0
+      }
+    ],
+    "daysOfTheWeek": [0]
   }
 ]
 ```
