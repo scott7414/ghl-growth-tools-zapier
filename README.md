@@ -8,7 +8,7 @@ This repository contains custom Zapier app configurations and examples for **GHL
 
 The **GHL Growth Tools Zapier app** enables users to:
 - Automate common tasks and workflows in GoHighLevel.
-- Configure user-specific settings such as business hours, permissions, and calendars.
+- Configure user-specific settings such as business hours.
 - Seamlessly integrate GoHighLevel data with other apps using Zapier.
 
 ---
