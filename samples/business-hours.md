@@ -1,6 +1,6 @@
 # **Configuring User Level Business Hours using our GHL Growth Tools Custom Zapier App**
 
-This guide explains how to set up **user-based business hours** using the custom **[GHL Growth Tools](https://ghlgrowthtools.com)**. The app allows users to define business hours for different days of the week, ensuring accurate scheduling and availability management.
+This guide explains how to set up **user-based business hours** using the create/update user endoints withour custom **[GHL Growth Tools](https://ghlgrowthtools.com)**. The app allows users to define business hours for different days of the week, ensuring accurate scheduling and availability management.
 
 ---
 
