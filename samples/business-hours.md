@@ -53,10 +53,6 @@ Specify the days of the week using numbers:
 - **5** = Friday  
 - **6** = Saturday  
 
-You can specify multiple days in an array. For example:  
-- `[1, 2, 3, 4, 5]` represents Monday through Friday.  
-- `[0, 6]` represents Sunday and Saturday.
-
 ---
 
 ### **2. hours**
