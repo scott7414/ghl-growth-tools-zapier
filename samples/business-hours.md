@@ -1,4 +1,4 @@
-# Configuring User Level Business Hours using our GHL Growth Tools Custom Zapier App
+# **Configuring User Level Business Hours using our GHL Growth Tools Custom Zapier App**
 
 This guide explains how to set up **user-based business hours** using the custom **[GHL Growth Tools](https://ghlgrowthtools.com)**. The app allows users to define business hours for different days of the week, ensuring accurate scheduling and availability management.
 
@@ -52,6 +52,10 @@ Specify the days of the week using numbers:
 - **4** = Thursday  
 - **5** = Friday  
 - **6** = Saturday  
+
+You can specify multiple days in an array. For example:  
+- `[1, 2, 3, 4, 5]` represents Monday through Friday.  
+- `[0, 6]` represents Sunday and Saturday.
 
 ---
 
@@ -154,18 +158,17 @@ Use **24-hour time** (also known as "military time") to specify the hours.
     "daysOfTheWeek": [5]
   }
 ]
-
 ```
 
-### **Case 2: Business Open on Weekends Only from 10 am to 2 pm**
+### **Case 2: Business Open on Weekends Only from 10 AM to 2 PM**
 
 ```json
 [
   {
     "hours": [
       {
-        "openHour": 8,
-        "closeHour": 17,
+        "openHour": 10,
+        "closeHour": 14,
         "openMinute": 0,
         "closeMinute": 0
       }
@@ -175,8 +178,8 @@ Use **24-hour time** (also known as "military time") to specify the hours.
   {
     "hours": [
       {
-        "openHour": 8,
-        "closeHour": 17,
+        "openHour": 10,
+        "closeHour": 14,
         "openMinute": 0,
         "closeMinute": 0
       }
@@ -186,11 +189,54 @@ Use **24-hour time** (also known as "military time") to specify the hours.
 ]
 ```
 
+### **Case 3: Business Has Split Hours on Monday and Tuesday**
+
+In this case, the business operates with a **break in between shifts** (e.g., open in the morning, closed for lunch, then open again in the afternoon). The `hours` object allows for multiple time periods in a single day.
+
+```json
+[
+  {
+    "hours": [
+      {
+        "openHour": 8,
+        "closeHour": 12,
+        "openMinute": 0,
+        "closeMinute": 0
+      },
+      {
+        "openHour": 14,
+        "closeHour": 17,
+        "openMinute": 0,
+        "closeMinute": 0
+      }
+    ],
+    "daysOfTheWeek": [1]
+  },
+  {
+    "hours": [
+      {
+        "openHour": 8,
+        "closeHour": 12,
+        "openMinute": 0,
+        "closeMinute": 0
+      },
+      {
+        "openHour": 14,
+        "closeHour": 17,
+        "openMinute": 0,
+        "closeMinute": 0
+      }
+    ],
+    "daysOfTheWeek": [2]
+  }
+]
+```
+
 ---
 
 ## **Support**
 
-If you encounter any issues or have questions about configuring business hours, please contact our support team @ support@ghlgrowthtools.com.
+If you encounter any issues or have questions about configuring business hours, please contact our support team at **[support@ghlgrowthtools.com](mailto:support@ghlgrowthtools.com)**.
 
 
 
