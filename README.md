@@ -1,62 +1,40 @@
-# GHL JSON API Integrations
+# Configuring Business Hours in GHL Growth Tools Zapier App
 
-This repository contains **JSON configurations**, **code snippets**, and **examples** for integrating with the **Go High Level (GHL) API** using tools like **Zapier**, **Make (Integromat)**, and custom-built applications.
-
-The goal is to provide a centralized collection of reusable configurations and ready-to-use examples for common use cases, such as handling user settings, business hours, calendars, and more.
+This guide explains how to set up **business hours** using the custom **GHL Growth Tools Zapier app**. The app allows users to define business hours for different days of the week, ensuring accurate scheduling and availability management.
 
 ---
 
-## **Contents**
+## **How to Input Business Hours**
 
-### **1. Zapier Integrations**
-- `user-settings.js`: Code to manage user-specific settings through the GHL API.
-- `business-hours.js`: Code for handling business hours in GHL via Zapier.
-- `location-wise-open-hours.json`: Example JSON for defining open hours by location.
+You will need to input your business hours as a **JSON object** in the provided text box in the Zapier app. Below is the format you should use:
 
-### **2. Make (Integromat) Integrations**
-- `ghl-custom-fields.json`: JSON template for syncing custom fields between GHL and other services.
-- `calendar-sync.json`: Example JSON for syncing calendars using the GHL API.
-
-### **3. Documentation**
-- `input-examples.md`: Examples of user input JSON for various API endpoints.
-- `api-usage-guide.md`: A guide on how to interact with the GHL API, including authentication, endpoint usage, and common errors.
-
----
-
-## **How to Use**
-
-### **1. Using with Zapier**
-1. Copy the relevant code snippet from the `zapier/` folder.
-2. Paste it into your Zapier custom app’s code editor.
-3. Follow the provided documentation to configure fields and input data.
-
-### **2. Using with Make (Integromat)**
-1. Download the JSON templates from the `make/` folder.
-2. Import them into your Make scenario.
-3. Modify the input fields as needed based on your specific requirements.
-
----
-
-## **Example JSON Configuration**
-
-Here’s a sample JSON for setting location-wise user business hours in Zapier using our GHL Growth Tools Custom Zapier APP:
+### **JSON Format Example**
 
 ```json
-{
-  "locationWiseOpenHours": {
-    "wAcbT1ozUU5MKeOM1uT5": [
+[
+  {
+    "daysOfTheWeek": [1],
+    "hours": [
       {
-        "hours": [
-          {
-            "openHour": 8,
-            "closeHour": 17,
-            "openMinute": 0,
-            "closeMinute": 0
-          }
-        ],
-        "daysOfTheWeek": [1, 2, 3, 4, 5]
+        "openHour": 8,
+        "closeHour": 17,
+        "openMinute": 0,
+        "closeMinute": 0
+      }
+    ]
+  },
+  {
+    "daysOfTheWeek": [6],
+    "hours": [
+      {
+        "openHour": 10,
+        "closeHour": 15,
+        "openMinute": 0,
+        "closeMinute": 0
       }
     ]
   }
-}
+]
+
+
 
