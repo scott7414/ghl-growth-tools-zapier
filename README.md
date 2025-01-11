@@ -33,7 +33,7 @@ The **GHL Growth Tools Zapier app** enables users to:
 
 For specific setup instructions, refer to:
 
-- [Business Hours Configuration](examples/business-hours.md)
+- [Business Hours Configuration](samples/business-hours.md)
 - Calendar Integration (coming soon)
 
 ---
