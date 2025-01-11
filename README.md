@@ -1,189 +1,50 @@
-# Configuring User Leve Business Hours in GHL Growth Tools Custom Zapier App
+# **GHL Growth Tools Zapier App**
 
-This guide explains how to set up **user-based business hours** using the custom **GHL Growth Tools Zapier app**. The app allows users to define business hours for different days of the week, ensuring accurate scheduling and availability management.
-
----
-
-## **How to Input User Business Hours**
-
-You will need to input your business hours as a **JSON object** in the provided text box in our Zapier app. Below is the format you should use:
-
-### **JSON Format Example**
-
-```json
-[
-  {
-    "daysOfTheWeek": [1],
-    "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
-      }
-    ]
-  },
-  {
-    "daysOfTheWeek": [6],
-    "hours": [
-      {
-        "openHour": 10,
-        "closeHour": 15,
-        "openMinute": 0,
-        "closeMinute": 0
-      }
-    ]
-  }
-]
-```
+This repository contains custom Zapier app configurations and examples for **GHL Growth Tools**, designed to extend the functionality of **GoHighLevel** by enabling seamless automation through Zapier.
 
 ---
 
-## **Explanation of Fields**
+## **Overview**
 
-### **1. daysOfTheWeek**
-
-Specify the days of the week using numbers:
-
-- **0** = Sunday  
-- **1** = Monday  
-- **2** = Tuesday  
-- **3** = Wednesday  
-- **4** = Thursday  
-- **5** = Friday  
-- **6** = Saturday  
-
-You can specify multiple days in an array. For example:
-- `[1, 2, 3, 4, 5]` represents Monday through Friday.
-- `[0, 6]` represents Sunday and Saturday.
+The **GHL Growth Tools Zapier app** enables users to:
+- Automate common tasks and workflows in GoHighLevel.
+- Configure user-specific settings such as business hours, permissions, and calendars.
+- Seamlessly integrate GoHighLevel data with other apps using Zapier.
 
 ---
 
-### **2. hours**
+## **Features**
 
-Define the opening and closing hours for each set of days.
-
-Each `hours` object contains:
-- **`openHour`**: The hour when the business opens (in 24-hour format, e.g., 8 for 8 AM, 15 for 3 PM).  
-- **`closeHour`**: The hour when the business closes (in 24-hour format, e.g., 17 for 5 PM, 23 for 11 PM).  
-- **`openMinute`**: The minute when the business opens. Must be between **0** and **59**.  
-- **`closeMinute`**: The minute when the business closes. Must be between **0** and **59**.
+- **Business Hours Configuration**:  
+  Define user-specific business hours for precise scheduling and availability management.  
+  Due to Zapier's limitations with nested JSON structures, we’ve provided examples and guidelines on how to correctly pass certain paramaters using structured JSON on our custom app.
 
 ---
 
-### **3. 24-Hour Time Format**
+## **How to Use**
 
-Use **24-hour time** (also known as "military time") to specify the hours.
-
-- Examples:  
-  - `8` = 8 AM  
-  - `15` = 3 PM  
-  - `23` = 11 PM  
+1. **Clone or download the repository** if you want to explore or modify the sample configurations.
+2. **Refer to the individual files** in the `examples` folder for detailed instructions on configuring each feature in the Zapier app.
+3. **Follow the provided guides in Zapier** to set up custom workflows.
 
 ---
 
-## **Validation Rules**
+## **Documentation**
 
-1. **Days of the Week**:  
-   Must be an array containing numbers between **0** and **6** only.
-   
-2. **Hours**:
-   - `openHour` and `closeHour` must be between **0** and **23**.
-   - `openMinute` and `closeMinute` must be between **0** and **59**.
-   
-3. **JSON Structure**:  
-   Ensure the input is valid JSON. You can use [JSONLint](https://jsonlint.com/) to validate your JSON before inputting it into the app.
+For specific setup instructions, refer to:
+
+- [Business Hours Configuration](examples/business-hours.md)
+- Calendar Integration (coming soon)
 
 ---
 
-## **Example Use Cases**
+## **Contributing**
 
-### **Case 1: Business Open Monday to Friday, 8 AM to 5 PM**
-
-```json
-[
-  {
-    "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
-      }
-    ],
-    "daysOfTheWeek": [1]
-  },
-  {
-    "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
-      }
-    ],
-    "daysOfTheWeek": [2]
-  },
-  {
-    "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
-      }
-    ],
-    "daysOfTheWeek": [3]
-  },
-  {
-    "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
-      }
-    ],
-    "daysOfTheWeek": [4]
-  },
-  {
-    "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
-      }
-    ],
-    "daysOfTheWeek": [5]
-  }
-]
-
-```
-
-### **Case 2: Business Open on Weekends Only from 10 am to 2 pm**
-
-```json
-[
-  {
-    "daysOfTheWeek": [3],
-    "hours": [
-      {
-        "openHour": 10,
-        "closeHour": 14,
-        "openMinute": 0,
-        "closeMinute": 0
-      }
-    ]
-  }
-]
-```
+If you’d like to contribute to the project, feel free to submit a pull request or open an issue with suggestions or improvements.
 
 ---
 
-## **Support**
+## **License**
 
-If you encounter any issues or have questions about configuring business hours, please contact our support team @ support@ghlgrowthtools.com.
-
-
+This repository is licensed under the [MIT License](LICENSE).
 
