@@ -8,7 +8,7 @@ This guide explains how to set up **user-based business hours** using the **crea
 
 You will need to input your business hours as a **JSON object** in the provided text box in our Zapier app. Below is the format you should use:
 
-![Business Hours Example](https://storage.googleapis.com/msgsndr/wAcbT1ozUU5MKeOM1uT5/media/6782dc1f99f61f23ad689e57.png)
+![Business Hours Example](https://storage.googleapis.com/msgsndr/cnrSdNBeVI9NoNfiuGsB/media/6791bdd76a58c423bd13d109.png)
 
 ### **JSON Format Example**
 
