@@ -205,21 +205,21 @@ Use **24-hour time** (also known as "military time") to specify the hours.
   {
     "hours": [
       {
-        "openHour": 10,
-        "closeHour": 14,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 10,
+        "close_hour": 14,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
     "days_of_the_week": [6]
   },
   {
     "hours": [
-      {
-        "openHour": 10,
-        "closeHour": 14,
-        "openMinute": 0,
-        "closeMinute": 0
+       {
+        "open_hour": 10,
+        "close_hour": 14,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
     "days_of_the_week": [0]
