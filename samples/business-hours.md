@@ -99,7 +99,7 @@ Use **24-hour time** (also known as "military time") to specify the hours.
    {
      "businessHours": [
        {
-         "days_of_week": [1],
+         "days_of_the_week": [1],
          "hours": [
            {
              "open_hour": 8,
@@ -143,57 +143,57 @@ Use **24-hour time** (also known as "military time") to specify the hours.
   {
     "hours": [
       {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 8,
+        "close_hour": 17,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
-    "daysOfTheWeek": [1]
+    "days_of_the_week": [1]
   },
   {
     "hours": [
       {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 8,
+        "close_hour": 17,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
-    "daysOfTheWeek": [2]
+    "days_of_the_week": [2]
   },
   {
     "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
+     {
+        "open_hour": 8,
+        "close_hour": 17,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
-    "daysOfTheWeek": [3]
+    "days_of_the_week": [3]
   },
   {
     "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
+     {
+        "open_hour": 8,
+        "close_hour": 17,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
-    "daysOfTheWeek": [4]
+    "days_of_the_week": [4]
   },
   {
     "hours": [
-      {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
+     {
+        "open_hour": 8,
+        "close_hour": 17,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
-    "daysOfTheWeek": [5]
+    "days_of_the_week": [5]
   }
 ]
 ```
@@ -211,7 +211,7 @@ Use **24-hour time** (also known as "military time") to specify the hours.
         "closeMinute": 0
       }
     ],
-    "daysOfTheWeek": [6]
+    "days_of_the_week": [6]
   },
   {
     "hours": [
@@ -222,7 +222,7 @@ Use **24-hour time** (also known as "military time") to specify the hours.
         "closeMinute": 0
       }
     ],
-    "daysOfTheWeek": [0]
+    "days_of_the_week": [0]
   }
 ]
 ```
@@ -236,36 +236,36 @@ In this case, the user operates with a **break in between shifts** (e.g., availa
   {
     "hours": [
       {
-        "openHour": 8,
-        "closeHour": 12,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 8,
+        "close_hour": 12,
+        "open_minute": 0,
+        "close_minute": 0
       },
       {
-        "openHour": 14,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 14,
+        "close_hour": 17,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
-    "daysOfTheWeek": [1]
+    "days_of_the_week": [1]
   },
   {
     "hours": [
       {
-        "openHour": 8,
-        "closeHour": 12,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 8,
+        "close_hour": 12,
+        "open_minute": 0,
+        "close_minute": 0
       },
       {
-        "openHour": 14,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 14,
+        "close_hour": 17,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ],
-    "daysOfTheWeek": [2]
+    "days_of_the_week": [2]
   }
 ]
 ```
