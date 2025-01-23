@@ -15,24 +15,24 @@ You will need to input your business hours as a **JSON object** in the provided 
 ```json
 [
   {
-    "daysOfTheWeek": [1],
+    "days_of_the_week": [1],
     "hours": [
       {
-        "openHour": 8,
-        "closeHour": 17,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 8,
+        "close_hour": 17,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ]
   },
   {
-    "daysOfTheWeek": [6],
+    "days_of_the_week": [6],
     "hours": [
       {
-        "openHour": 10,
-        "closeHour": 15,
-        "openMinute": 0,
-        "closeMinute": 0
+        "open_hour": 10,
+        "close_hour": 15,
+        "open_minute": 0,
+        "close_minute": 0
       }
     ]
   }
@@ -62,10 +62,10 @@ Specify the days of the week using numbers:
 Define the opening and closing hours for each set of days.
 
 Each `hours` object contains:
-- **`openHour`**: The hour when the business opens (in 24-hour format, e.g., 8 for 8 AM, 15 for 3 PM).  
-- **`closeHour`**: The hour when the business closes (in 24-hour format, e.g., 17 for 5 PM, 23 for 11 PM).  
-- **`openMinute`**: The minute when the business opens. Must be between **0** and **59**.  
-- **`closeMinute`**: The minute when the business closes. Must be between **0** and **59**.
+- **`open_hourr`**: The hour when the business opens (in 24-hour format, e.g., 8 for 8 AM, 15 for 3 PM).  
+- **`close_hour`**: The hour when the business closes (in 24-hour format, e.g., 17 for 5 PM, 23 for 11 PM).  
+- **`open_minute`**: The minute when the business opens. Must be between **0** and **59**.  
+- **`close_minute`**: The minute when the business closes. Must be between **0** and **59**.
 
 ---
 
@@ -99,13 +99,13 @@ Use **24-hour time** (also known as "military time") to specify the hours.
    {
      "businessHours": [
        {
-         "daysOfTheWeek": [1],
+         "days_of_week": [1],
          "hours": [
            {
-             "openHour": 8,
-             "closeHour": 17,
-             "openMinute": 0,
-             "closeMinute": 0
+             "open_hour": 8,
+             "close_hour": 17,
+             "open_minute": 0,
+             "close_minute": 0
            }
          ]
        }
@@ -117,13 +117,13 @@ Use **24-hour time** (also known as "military time") to specify the hours.
    ```json
    [
      {
-       "daysOfTheWeek": [1],
+       "days_of_week": [1],
        "hours": [
          {
-           "openHour": 8,
-           "closeHour": 17,
-           "openMinute": 0,
-           "closeMinute": 0
+           "open_hour": 8,
+           "close_hour": 17,
+           "open_minute": 0,
+           "close_minute": 0
          }
        ]
      }
