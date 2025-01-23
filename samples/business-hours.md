@@ -86,8 +86,8 @@ Use **24-hour time** (also known as "military time") to specify the hours.
    Must be an array containing a single number between **0** and **6** only.
    
 2. **Hours**:
-   - `openHour` and `closeHour` must be between **0** and **23**.
-   - `openMinute` and `closeMinute` must be between **0** and **59**.
+   - `open_hour` and `closeHour` must be between **0** and **23**.
+   - `open_minute` and `closeMinute` must be between **0** and **59**.
    
 3. **JSON Structure**  
    Ensure the input is valid JSON by wrapping your code inside an object with a key like `businessHours`. You can use [JSONLint](https://jsonlint.com/) to validate your JSON before inputting it into the app.
