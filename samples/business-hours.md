@@ -62,7 +62,7 @@ Specify the days of the week using numbers:
 Define the opening and closing hours for each set of days.
 
 Each `hours` object contains:
-- **`open_hourr`**: The hour when the business opens (in 24-hour format, e.g., 8 for 8 AM, 15 for 3 PM).  
+- **`open_hour`**: The hour when the business opens (in 24-hour format, e.g., 8 for 8 AM, 15 for 3 PM).  
 - **`close_hour`**: The hour when the business closes (in 24-hour format, e.g., 17 for 5 PM, 23 for 11 PM).  
 - **`open_minute`**: The minute when the business opens. Must be between **0** and **59**.  
 - **`close_minute`**: The minute when the business closes. Must be between **0** and **59**.
