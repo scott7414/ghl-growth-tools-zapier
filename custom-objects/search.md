@@ -8,7 +8,7 @@ The app handles fields like `locationId`, `pageLimit`, `sort`, and `query`, so *
 ## 📌 How to Use
 
 - Always wrap your filters inside `{ "filters": [ ... ] }`
-- Do **not** include `locationId`, `page`, or `sort` — those are handled separately.
+- Do **not** include `locationId`, `page`, `pageLimit`, `sort`, `schemaKey`, `searchAfterTimestamp`, or `searchAfterId` — those are handled separately in the app.
 - Validate your JSON using [jsonlint.com](https://jsonlint.com) before pasting it into Zapier.
 
 ---
