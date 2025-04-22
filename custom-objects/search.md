@@ -13,8 +13,8 @@ The app handles fields like `locationId`, `pageLimit`, `sort`, and `query`, so *
 
 ---
 
-## ✅ Example: Single Filter
-_This example searches for all records in the selected object where the custom text type field `year` equals `2022`._
+## ✅ Example: Single Filter on a Custom Field of a Custom Object.
+_This example searches for all records in the selected object where the custom text type field labeled `year` equals `2022`._
 
 ```json
 {
