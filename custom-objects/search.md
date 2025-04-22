@@ -1,4 +1,4 @@
-# HighLevel Filters Reference for Zapier App
+# HighLevel Filters Reference for GHL Growth Tools Zapier App
 
 This guide shows how to format the `filters` object for the **Filters** field in your GHL Growth Tools Zapier app.  
 The app handles fields like `locationId`, `pageLimit`, `sort`, and `query`, so **only pass the full `filters` wrapper object starting with `{ "filters": [...] }`**.
