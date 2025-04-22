@@ -31,7 +31,7 @@ _This example searches for all records in the selected object where the custom t
 ---
 
 ## ✅ Example: Filter by Multiple Contact Records
-_This example returns all records in the selected object that are related to two specific contacts, based on their record IDs._
+_This example returns all records in the selected object that are related to two specific contacts, based on their contact IDs._
 
 ```json
 {
