@@ -1,86 +1,96 @@
-# HighLevel Records Search API (Reference + Examples)
+# HighLevel Filters Reference for Zapier App
 
-This page provides a structured overview of the [HighLevel Records Search API](https://doc.clickup.com/8631005/d/h/87cpx-277156/93bf0c2e23177b0/87cpx-379336), including filtering, sorting, pagination, and sample payloads for both Custom Objects and Business (Company) records.
-
-> ℹ️ **Note:** This API currently supports only custom objects and business (company). More standard object support is planned.
-
----
-
-## 📌 Table of Contents
-
-- [Overview](#overview)
-- [Request Body Fields](#request-body-fields)
-- [Filtering Syntax](#filtering-syntax)
-- [Supported Operators](#supported-operators)
-- [Sorting](#sorting)
-- [Pagination](#pagination)
-- [Sample Payloads](#sample-payloads)
-  - [Custom Object Example](#custom-object-example)
-  - [Business Object Example](#business-object-example)
-- [Helpful Links](#helpful-links)
+This guide shows how to format filters for the **Filters** field in your custom Zapier app.  
+The app automatically handles `locationId`, `pageLimit`, `page`, `query`, and `sort`, so you only need to provide the **filter object** (starting with `{` and ending with `}`).
 
 ---
 
-## Overview
+## 📌 How to Use
 
-The Records Search API enables advanced querying of custom object and business records. It supports:
+- Only pass the contents of the `filters` array.
+- You can pass **a single filter object**, or **wrap multiple filters in an array or group**.
+- Do **not** include `locationId`, `page`, or any other outer fields.
 
-- Filter groups with `AND` and `OR` logic
-- Nested filters
-- Search-after pagination
-- Sort order
-- Full-text queries
+---
 
-**Endpoint:**
-```
-POST /objects/${objectKey}/records/search
+## ✅ Example: Single Filter
+
+```json
+{
+  "field": "properties.year",
+  "operator": "eq",
+  "value": 2022
+}
 ```
 
 ---
 
-## Request Body Fields
+## ✅ Example: Filter by Multiple Related Records
 
-| Field         | Type     | Required | Description |
-|--------------|----------|----------|-------------|
-| `locationId` | string   | ✅ Yes   | The Location ID in which the search is performed |
-| `page`       | number   | ✅ Yes   | Page number of results |
-| `pageLimit`  | number   | ✅ Yes   | Number of results per page |
-| `query`      | string   | ❌ No    | Full-text query across indexed fields |
-| `filters`    | array    | ❌ No    | Filter groups using `AND` / `OR` logic |
-| `sort`       | array    | ❌ No    | Sort criteria by field and direction |
-| `searchAfter`| array    | ❌ No    | Cursor for pagination `[timestamp, id]` |
-
----
-
-## Filtering Syntax
-
-Filters follow a flexible nested structure. Each filter object can include:
-
-- `field`: the field or property to filter (e.g., `properties.name`)
-- `operator`: comparison type (`eq`, `gt`, `lt`, etc.)
-- `value`: the value to compare against
-- `group`: logical grouping (`AND` or `OR`)
-- `filters`: array of nested filters if grouped
-
-> By default, multiple filters are grouped using `AND`.
+```json
+{
+  "field": "relations",
+  "operator": "nested",
+  "value": [
+    {
+      "field": "recordId",
+      "operator": "eq",
+      "value": [
+        "vPt2TwsfFWWKcUIDM3RT",
+        "riy5TaVTIY7rUX5q8mlg"
+      ]
+    }
+  ]
+}
+```
 
 ---
 
-## Supported Operators
+## ✅ Example: AND Group with Two Filters
 
-Below is a list of supported operators you can use when building filters:
+```json
+{
+  "group": "AND",
+  "filters": [
+    {
+      "field": "properties.make",
+      "operator": "eq",
+      "value": "Toyota"
+    },
+    {
+      "field": "properties.year",
+      "operator": "eq",
+      "value": 2022
+    }
+  ]
+}
+```
 
-| Operator       | Description                     | Value Type                | Notes / Example Format                              |
-|----------------|----------------------------------|----------------------------|-----------------------------------------------------|
-| `eq`           | Equals                           | String, Number, Boolean    | `"operator": "eq", "value": "red"`                  |
-| `not_eq`       | Not Equals                       | String, Number, Boolean    | `"operator": "not_eq", "value": true`               |
-| `contains`     | Contains (no special characters) | String                     | `"operator": "contains", "value": "john"`           |
-| `not_contains` | Not Contains                     | String                     | `"operator": "not_contains", "value": "admin"`      |
-| `exists`       | Field exists (has any value)     | *None*                     | Only `"field"` and `"operator"` are required        |
-| `not_exists`   | Field does not exist             | *None*                     | Only `"field"` and `"operator"` are required        |
-| `range`        | Range between two values         | Object                     | See example below                                   |
+---
 
-### Example for `range` operator:
+## ✅ Example: OR Group
+
+```json
+{
+  "group": "OR",
+  "filters": [
+    {
+      "field": "properties.type",
+      "operator": "eq",
+      "value": "trade-in"
+    },
+    {
+      "field": "properties.type",
+      "operator": "eq",
+      "value": "new"
+    }
+  ]
+}
+```
+
+---
+
+## ✅ Example: Range Filter
 
 ```json
 {
@@ -95,136 +105,60 @@ Below is a list of supported operators you can use when building filters:
 
 ---
 
-## Sorting
-
-Sort results using:
+## ✅ Example: Field Exists
 
 ```json
-"sort": [
-  {
-    "field": "updatedAt",
-    "direction": "asc"
-  }
-]
-```
-
----
-
-## Pagination
-
-Use the `searchAfter` array to paginate records. This is returned in every response as:
-```json
-"searchAfter": [timestamp, id]
-```
-
-To fetch the next page, send the same array in your next request.
-
----
-
-## Sample Payloads
-
-### Custom Object Example
-
-```jsonc
 {
-  "locationId": "mbEVGywZGDnPkLKytm26",
-  "page": 1,
-  "pageLimit": 20,
-  "query": "buddy",
-  "filters": [
-    {
-      "group": "AND",
-      "filters": [
-        {
-          "group": "OR",
-          "filters": [
-            {
-              "group": "AND",
-              "filters": [
-                {
-                  "field": "properties.name",
-                  "operator": "eq",
-                  "value": "jerry"
-                }
-              ]
-            },
-            {
-              "group": "AND",
-              "filters": [
-                {
-                  "field": "properties.color",
-                  "operator": "eq",
-                  "value": "red"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "sort": [
-    {
-      "field": "updatedAt",
-      "direction": "asc"
-    }
-  ]
+  "field": "properties.trade_status",
+  "operator": "exists"
 }
 ```
 
 ---
 
-### Business Object Example
+## ✅ Example: Field Does Not Exist
 
-```jsonc
+```json
 {
-  "locationId": "mbEVGywZGDnPkLKytm26",
-  "page": 1,
-  "pageLimit": 20,
-  "filters": [
-    {
-      "group": "AND",
-      "filters": [
-        {
-          "group": "OR",
-          "filters": [
-            {
-              "group": "AND",
-              "filters": [
-                {
-                  "field": "properties.name",
-                  "operator": "eq",
-                  "value": "Biomedics"
-                }
-              ]
-            },
-            {
-              "group": "AND",
-              "filters": [
-                {
-                  "field": "properties.phone",
-                  "operator": "eq",
-                  "value": "+919876543229"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "sort": [
-    {
-      "field": "phone",
-      "direction": "asc"
-    }
-  ]
+  "field": "properties.description",
+  "operator": "not_exists"
 }
 ```
 
 ---
 
-## Helpful Links
+## ✅ Example: Contains Text
 
-- 🔗 [HighLevel API Filter Reference](https://doc.clickup.com/8631005/d/h/87cpx-277156/93bf0c2e23177b0/87cpx-379336)
-- 🔗 [JSON Validator (jsonlint.com)](https://jsonlint.com/)
+```json
+{
+  "field": "properties.notes",
+  "operator": "contains",
+  "value": "pending"
+}
+```
+
+---
+
+## 🧠 Supported Operators
+
+| Operator        | Description                  | Value Type                |
+|------------------|------------------------------|----------------------------|
+| `eq`             | Equals                       | String, Number, Boolean    |
+| `not_eq`         | Not Equals                   | String, Number, Boolean    |
+| `contains`       | Contains (no special chars)  | String                     |
+| `not_contains`   | Not Contains                 | String                     |
+| `exists`         | Field has a value            | *None*                     |
+| `not_exists`     | Field is missing or null     | *None*                     |
+| `range`          | Value falls in a range       | Object `{ gte, lte }`      |
+
+---
+
+## 🔗 Related Resources
+
+- [HighLevel API Filter Reference (ClickUp Doc)](https://doc.clickup.com/8631005/d/h/87cpx-277156/93bf0c2e23177b0/87cpx-379336)
+- [Validate your JSON](https://jsonlint.com/)
+
+---
+
+💡 **Tip**: If your filter doesn't seem to work, test your JSON first in [jsonlint.com](https://jsonlint.com/) and double-check the `field` names from the object schema in HighLevel.
+
