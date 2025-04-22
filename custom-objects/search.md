@@ -14,6 +14,7 @@ The app handles fields like `locationId`, `pageLimit`, `sort`, and `query`, so *
 ---
 
 ## ✅ Example: Single Filter
+_This example searches for all records in the selected object where the custom field `year` equals `2022`._
 
 ```json
 {
