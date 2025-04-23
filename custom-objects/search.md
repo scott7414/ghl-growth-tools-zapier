@@ -33,7 +33,7 @@ _This example searches for all records in the selected object where the custom t
 
 ---
 
-## ✅ Example: Filter by Multiple Contact Records Using the Relations Field
+## ✅ Example: Filter by Multiple Contact Records  
 _This example returns all records in the selected object that are related to two specific contacts, based on their contact IDs._  
 ➡️ **Note:** When using the `relations` filter, only the `eq` (equals) operator is supported.
 
@@ -88,6 +88,7 @@ This is useful when searching a custom object like Vehicles to return all cars a
   ]
 }
 ```
+
 ---
 
 ## ✅ Example: AND Group with Two Filters  
@@ -159,6 +160,47 @@ This is typically used with Number or Monetary fields.
         "gte": 5000,
         "lte": 15000
       }
+    }
+  ]
+}
+```
+
+---
+
+## ✅ Example: Combine AND + OR Logic  
+_This example returns records where:_
+
+- _`make` is `"Toyota"`_
+- _AND (`year` equals `2022` OR `description` does not exist`)_
+
+_Useful for finding all Toyota vehicles where the year is 2022 or no description has been added._
+
+```json
+{
+  "filters": [
+    {
+      "group": "AND",
+      "filters": [
+        {
+          "field": "properties.make",
+          "operator": "eq",
+          "value": "Toyota"
+        },
+        {
+          "group": "OR",
+          "filters": [
+            {
+              "field": "properties.year",
+              "operator": "eq",
+              "value": 2022
+            },
+            {
+              "field": "properties.description",
+              "operator": "not_exists"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
