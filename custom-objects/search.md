@@ -2,6 +2,8 @@
 
 This guide shows how to format the `filters` object for the **Filters** field in the [GHL Growth Tools Zapier app](https://www.ghlgrowthtools.com).  
 
+> 🔗 _External links open in a new tab when clicked._
+
 ---
 
 ## 📌 How to Use
@@ -12,7 +14,7 @@ This guide shows how to format the `filters` object for the **Filters** field in
 
 ---
 
-## ✅ Example: Single Filter on a Custom Field of a Custom Object.
+## ✅ Example: Single Filter on a Custom Field of a Custom Object  
 _This example searches for all records in the selected object where the custom text type field labeled `year` equals `2022`._
 
 ```json
@@ -29,8 +31,9 @@ _This example searches for all records in the selected object where the custom t
 
 ---
 
-## ✅ Example: Filter by Multiple Contact Records
-_This example returns all records in the selected object that are related to two specific contacts, based on their contact IDs._
+## ✅ Example: Filter by Multiple Contact Records  
+_This example returns all records in the selected object that are related to two specific contacts, based on their contact IDs._  
+➡️ **Note:** When using the `relations` filter, only the `eq` (equals) operator is supported.
 
 ```json
 {
@@ -189,9 +192,8 @@ _This example returns all records in the selected object that are related to two
 ## 🔗 Related Resources
 
 - [HighLevel API Filter Reference (ClickUp Doc)](https://doc.clickup.com/8631005/d/h/87cpx-277156/93bf0c2e23177b0/87cpx-379336)
-- [Validate your JSON](https://jsonlint.com/)
+- [Validate your JSON](https://jsonlint.com)
 
 ---
 
 💡 **Tip**: If your filter doesn't seem to work, test your JSON at [jsonlint.com](https://jsonlint.com) and make sure you're using valid property names from your custom object or business schema.
-
