@@ -2,8 +2,6 @@
 
 This guide shows how to format the `filters` object for the **Filters** field in the [GHL Growth Tools Zapier app](https://www.ghlgrowthtools.com).  
 
-> 🔗 _External links open in a new tab when clicked._
-
 ---
 
 ## 📌 How to Use
