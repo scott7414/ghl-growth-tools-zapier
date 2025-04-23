@@ -33,7 +33,7 @@ _This example searches for all records in the selected object where the custom t
 
 ---
 
-## ✅ Example: Filter by Multiple Contact Records  
+## ✅ Example: Filter by Multiple Contact Records Using the Relations Field
 _This example returns all records in the selected object that are related to two specific contacts, based on their contact IDs._  
 ➡️ **Note:** When using the `relations` filter, only the `eq` (equals) operator is supported.
 
