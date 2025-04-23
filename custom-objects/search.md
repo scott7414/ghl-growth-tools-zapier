@@ -3,7 +3,6 @@
 This guide shows how to format the `filters` object for the **Filters** field in the [GHL Growth Tools Zapier app](https://www.ghlgrowthtools.com).  
 
 > ⚠️ **Note:** Field values are **case-sensitive**, and phone numbers **must include the country code** (e.g., `+1` for U.S. numbers).  
-> 🔗 External links open in a new tab.
 
 ---
 
