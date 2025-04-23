@@ -2,6 +2,9 @@
 
 This guide shows how to format the `filters` object for the **Filters** field in the [GHL Growth Tools Zapier app](https://www.ghlgrowthtools.com).  
 
+> ⚠️ **Note:** Field values are **case-sensitive**, and phone numbers **must include the country code** (e.g., `+1` for U.S. numbers).  
+> 🔗 External links open in a new tab.
+
 ---
 
 ## 📌 How to Use
@@ -13,7 +16,7 @@ This guide shows how to format the `filters` object for the **Filters** field in
 ---
 
 ## ✅ Example: Single Filter on a Custom Field of a Custom Object  
-_This example searches for all records in the selected object where the custom text type field labeled `year` equals `2022`._
+_This example searches for all records in the selected object where the custom text field `year` equals `2022`._
 
 ```json
 {
@@ -56,8 +59,9 @@ _This example returns all records in the selected object that are related to two
 
 ---
 
-## ✅ Example: AND Group with Two Filters
-_This example searches for all records that have a make value of `Toyota` and a model value of `Camry`._
+## ✅ Example: AND Group with Two Filters  
+_This example returns records where the `make` is `Toyota` and the `model` is `Camry`._
+
 ```json
 {
   "filters": [
@@ -82,7 +86,8 @@ _This example searches for all records that have a make value of `Toyota` and a 
 
 ---
 
-## ✅ Example: OR Group
+## ✅ Example: OR Group  
+_This example returns records where the `type` is either `trade-in` or `new`._
 
 ```json
 {
@@ -108,7 +113,8 @@ _This example searches for all records that have a make value of `Toyota` and a 
 
 ---
 
-## ✅ Example: Range Filter
+## ✅ Example: Range Filter  
+_This example searches for records where the `price` is between `5,000` and `15,000`._
 
 ```json
 {
@@ -127,7 +133,8 @@ _This example searches for all records that have a make value of `Toyota` and a 
 
 ---
 
-## ✅ Example: Field Exists
+## ✅ Example: Field Exists  
+_This example returns records where the field `trade_status` exists (i.e., has any value)._
 
 ```json
 {
@@ -142,7 +149,8 @@ _This example searches for all records that have a make value of `Toyota` and a 
 
 ---
 
-## ✅ Example: Field Does Not Exist
+## ✅ Example: Field Does Not Exist  
+_This example returns records where the `description` field is missing or empty._
 
 ```json
 {
@@ -157,7 +165,8 @@ _This example searches for all records that have a make value of `Toyota` and a 
 
 ---
 
-## ✅ Example: Contains Text
+## ✅ Example: Contains Text  
+_This example returns records where the `notes` field contains the word `pending`._
 
 ```json
 {
