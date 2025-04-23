@@ -60,6 +60,36 @@ _This example returns all records in the selected object that are related to two
 
 ---
 
+## ✅ Example: Combine Relation and Property Filter  
+_This example searches for all records in the selected object that are linked to a specific contact **and** have a `year` field equal to `2022`.  
+This is useful when searching a custom object like Vehicles to return all cars a contact purchased in a specific year._
+
+```json
+{
+  "filters": [
+    {
+      "field": "properties.year",
+      "operator": "eq",
+      "value": 2022
+    },
+    {
+      "field": "relations",
+      "operator": "nested",
+      "value": [
+        {
+          "field": "recordId",
+          "operator": "eq",
+          "value": [
+            "vPt2TwsfFWWKcUIDM3RT"
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+```
+
 ## ✅ Example: AND Group with Two Filters  
 _This example returns records in a vehicles custom object where the `make` is `Toyota` and the `model` is `Camry`._
 
