@@ -1,10 +1,12 @@
 # HighLevel Search Records Filters Reference for GHL Growth Tools Zapier App
 
-This guide shows how to format the `filters` object for the **Filters** field in the [GHL Growth Tools Zapier app](https://www.ghlgrowthtools.com).  
+This guide shows how to format the `filters` object for the **Filters** field in the [GHL Growth Tools Zapier app](https://www.ghlgrowthtools.com).
 
 > ⚠️ **Note:** Field values are **case-sensitive**, and phone numbers **must include the country code** (e.g., `+1` for U.S. numbers).  
 > 🧮 If your custom field is a **Number** or **Monetary** field, values must be passed as plain numbers — **without quotes, commas, or currency symbols**.  
 > ✅ Valid: `12000` | ❌ Invalid: `"12,000"`, `"$12,000"`
+
+> 🚫 **Limitation:** Filtering by `businessId` using the `relations` field is not supported by the HighLevel API as of now. Use only `contactId` or custom object record IDs.
 
 ---
 
@@ -34,8 +36,8 @@ _This example searches for all records in the selected object where the custom t
 ---
 
 ## ✅ Example: Filter by Multiple Contact Records  
-_This example returns all records in the selected object that are related to two specific contacts, based on their contact IDs._  
-➡️ **Note:** When using the `relations` filter, only the `eq` (equals) operator is supported.
+_This example returns all records in the selected object that are related to two specific contacts, or to specific custom object records that are related to other custom objects._  
+➡️ **Note:** When using the `relations` filter, only the `eq` (equals) operator is supported. You cannot filter by `businessId`.
 
 ```json
 {
@@ -62,7 +64,8 @@ _This example returns all records in the selected object that are related to two
 
 ## ✅ Example: Combine Relation and Property Filter  
 _This example searches for all records in the selected object that are linked to a specific contact **and** have a `year` field equal to `2022`.  
-This is useful when searching a custom object like Vehicles to return all cars a contact purchased in a specific year._
+You can also use this approach with custom object record IDs that are related to other custom objects.  
+You cannot use this filter with `businessId`._
 
 ```json
 {
