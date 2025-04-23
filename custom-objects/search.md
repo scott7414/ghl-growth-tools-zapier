@@ -59,7 +59,7 @@ _This example returns all records in the selected object that are related to two
 ---
 
 ## ✅ Example: AND Group with Two Filters  
-_This example returns records where the `make` is `Toyota` and the `model` is `Camry`._
+_This example returns records in a vehicles custom object where the `make` is `Toyota` and the `model` is `Camry`._
 
 ```json
 {
