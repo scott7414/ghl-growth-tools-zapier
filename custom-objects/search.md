@@ -3,6 +3,8 @@
 This guide shows how to format the `filters` object for the **Filters** field in the [GHL Growth Tools Zapier app](https://www.ghlgrowthtools.com).  
 
 > ⚠️ **Note:** Field values are **case-sensitive**, and phone numbers **must include the country code** (e.g., `+1` for U.S. numbers).  
+> 🧮 If your custom field is a **Number** or **Monetary** field, values must be passed as plain numbers — **without quotes, commas, or currency symbols**.  
+> ✅ Valid: `12000` | ❌ Invalid: `"12,000"`, `"$12,000"`
 
 ---
 
@@ -113,7 +115,9 @@ _This example returns records where the `type` is either `trade-in` or `new`._
 ---
 
 ## ✅ Example: Range Filter  
-_This example searches for records where the `price` is between `5,000` and `15,000`._
+_This example searches for records where the `price` is between `5000` and `15000`.  
+This is typically used with Number or Monetary fields.  
+➡️ Do **not** use commas or currency symbols in numeric values (e.g., use `15000` not `"15,000"` or `"$15000"`)._
 
 ```json
 {
