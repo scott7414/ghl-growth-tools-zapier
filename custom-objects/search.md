@@ -1,7 +1,6 @@
 # HighLevel Search Records Filters Reference for GHL Growth Tools Zapier App
 
 This guide shows how to format the `filters` object for the **Filters** field in the [GHL Growth Tools Zapier app](https://www.ghlgrowthtools.com).  
-The app has dedicated fields `pageLimit`, `sort`, and `query`, so **only pass the full `filters` wrapper object starting with `{ "filters": [...] }`**.
 
 ---
 
