@@ -88,7 +88,7 @@ This is useful when searching a custom object like Vehicles to return all cars a
   ]
 }
 ```
-```
+---
 
 ## ✅ Example: AND Group with Two Filters  
 _This example returns records in a vehicles custom object where the `make` is `Toyota` and the `model` is `Camry`._
