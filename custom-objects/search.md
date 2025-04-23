@@ -57,7 +57,7 @@ _This example returns all records in the selected object that are related to two
 ---
 
 ## ✅ Example: AND Group with Two Filters
-
+_This example searches for all records that have a make value of `Toyota` and a model value of `Camry`._
 ```json
 {
   "filters": [
@@ -70,9 +70,9 @@ _This example returns all records in the selected object that are related to two
           "value": "Toyota"
         },
         {
-          "field": "properties.year",
+          "field": "properties.model",
           "operator": "eq",
-          "value": 2022
+          "value": "Camry"
         }
       ]
     }
